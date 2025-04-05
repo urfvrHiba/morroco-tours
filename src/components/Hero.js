@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 function Hero() {
   const [bgImage, setBgImage] = useState('/casa.jpg');
-  const images = ['/ouarzazate.jpg', '/casa.jpg', '/rabat.jpg', '/tanger.jpg'];
+  const images = ['/ouarzazate.jpg', '/casa.jpg', '/rabatt.jpg', '/tanger.jpg'];
   const cities = ['Ouarzazate', 'Casablanca', 'Rabat', 'Tanger'];
   const descriptions = [
     'Discover the charm of Ouarzazate, the gateway to the Sahara!',

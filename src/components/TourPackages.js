@@ -5,13 +5,13 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 function TourPackages() {
   const allPackages = [
     { title: "4-Day Epic Adventure: Casablanca, Marrakech, Agafay,rabat & More", imageUrl: "casablanca.jpg", duration: "4 Days", oldPrice: "$399", newPrice: "$299", discount: "25%" },
-    { title: "Experience Essaouira in a Day: Private Tour of History & Culture", imageUrl: "essaouira.jpg", duration: "3 Days", oldPrice: "$320", newPrice: "$280", discount: "12%" },
+    { title: "Experience Essaouira in a Day: Private Tour of History & Culture", imageUrl: "Essaouira.jpg", duration: "3 Days", oldPrice: "$320", newPrice: "$280", discount: "12%" },
     { title: "ONE Day Tour in Ouarzazate Traditional Lunch included", imageUrl: "ouarzazatee.jpg", duration: "1 Day", oldPrice: "$150", newPrice: "$120", discount: "20%" },
     { title: "Chefchaouen: The Blue Pearl", imageUrl: "chaouen.jpg", duration: "2 Days", oldPrice: "$220", newPrice: "$185", discount: "15%" },
     { title: "2-Day Agadir Tour: Explore the agadir", imageUrl: "agadir.jpg", duration: "2 Days", oldPrice: "$600", newPrice: "$450", discount: "10%" },
     { title: "Experience Marrakech in a Day: Explore Palaces, Souks & Gardens", imageUrl: "marakesh.jpg", duration: "3 Days", oldPrice: "$300", newPrice: "$260", discount: "13%" },
     { title: "Explore Tangier: A One-Day Private Tour of Culture & Scenery", imageUrl: "tangier.jpg", duration: "13 Days", oldPrice: "$199", newPrice: "$177", discount: "" },
-    { title: "Discover Rabat: One-Day Private Tour of History, Culture & Landmarks", imageUrl: "rabatt.jpg", duration: "13 Days", oldPrice: "$199", newPrice: "$177", discount: "" },
+    { title: "Discover Rabat: One-Day Private Tour of History, Culture & Landmarks", imageUrl: "rabat.jpg", duration: "13 Days", oldPrice: "$199", newPrice: "$177", discount: "" },
   ];
 
   const reviews = [
