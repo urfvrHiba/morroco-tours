@@ -4,12 +4,16 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import InfoSection from './components/InfoSection';
 import Services from './components/Services';
+import ActivitiesPage from "./components/ActivitiesPage";
+import Activities from "./components/Activities";
 import TourPackages from './components/TourPackages';
 import Destinations from './destinations/Destinations';
 import Chefchaouen from './destinations/Chefchaouen';
 import Marrakech from './destinations/Marrakech';
 import Ouarzazate from './destinations/Ouarzazate';
 import Rabat from './destinations/Rabat';
+ 
+
 
 function App() {
   return (
@@ -21,12 +25,17 @@ function App() {
         <div className="my-20"></div>
         <TourPackages />
         <Services/>
+  
+        
         <Routes>
+        <Route path="/Activities" element={<ActivitiesPage/>} />
+        <Route path="/" element={<Activities/>} />
           <Route path="/destinations/Destinations" element={<Destinations />} />
           <Route path="/destinations/Chefchaouen" element={<Chefchaouen />} />
           <Route path="/destinations/Marrakech" element={<Marrakech />} />
           <Route path="/destinations/Ouarzazate" element={<Ouarzazate />} />
           <Route path="/destinations/Rabat" element={<Rabat />} />
+          
         </Routes>
       </div>
     </Router>
