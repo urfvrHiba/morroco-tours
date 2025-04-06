@@ -1,8 +1,14 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FaHiking, FaCity, FaLandmark, FaSpa, FaUmbrellaBeach, FaGift, FaCampground, FaUsers, FaFacebookF, FaInstagram } from "react-icons/fa";
 
 function Activities() {
+  const location = useLocation(); // Récupérer l'objet location pour utiliser les query params si nécessaire
+  const queryParams = new URLSearchParams(location.search); // Récupérer les paramètres de requête
+  const type = queryParams.get('type'); // Si type est dans l'URL, l'extraire
+
+  console.log("Activité sélectionnée :", type); // Pour déboguer et vérifier la valeur de 'type'
+
   return (
     <div>
       <div className="bg-white rounded-lg p-4 px-20 flex flex-col justify-between mb-10">

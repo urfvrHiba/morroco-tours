@@ -12,8 +12,6 @@ import Chefchaouen from './destinations/Chefchaouen';
 import Marrakech from './destinations/Marrakech';
 import Ouarzazate from './destinations/Ouarzazate';
 import Rabat from './destinations/Rabat';
- 
-
 
 function App() {
   return (
@@ -24,18 +22,21 @@ function App() {
         <InfoSection />
         <div className="my-20"></div>
         <TourPackages />
-        <Services/>
-  
-        
+        <Services />
+
         <Routes>
-        <Route path="/Activities" element={<ActivitiesPage/>} />
-        <Route path="/" element={<Activities/>} />
-          <Route path="/destinations/Destinations" element={<Destinations />} />
-          <Route path="/destinations/Chefchaouen" element={<Chefchaouen />} />
-          <Route path="/destinations/Marrakech" element={<Marrakech />} />
-          <Route path="/destinations/Ouarzazate" element={<Ouarzazate />} />
-          <Route path="/destinations/Rabat" element={<Rabat />} />
+          {/* Routes spécifiques aux destinations */}
+          <Route path="/destinations" element={<Destinations />} />
+          <Route path="/destinations/chefchaouen" element={<Chefchaouen />} />
+          <Route path="/destinations/marrakech" element={<Marrakech />} />
+          <Route path="/destinations/ouarzazate" element={<Ouarzazate />} />
+          <Route path="/destinations/rabat" element={<Rabat />} />
           
+          {/* Route pour les activités */}
+          <Route path="/activities" element={<ActivitiesPage />} />
+          
+          {/* Route par défaut pour afficher les activités principales */}
+          <Route path="/" element={<Activities />} />
         </Routes>
       </div>
     </Router>
