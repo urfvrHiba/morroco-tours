@@ -23,20 +23,20 @@ function App() {
         <div className="my-20"></div>
         <TourPackages />
         <Services />
+        <Activities/>
 
         <Routes>
-          {/* Routes spécifiques aux destinations */}
+          {/* Destinations Routes */}
           <Route path="/destinations" element={<Destinations />} />
           <Route path="/destinations/chefchaouen" element={<Chefchaouen />} />
           <Route path="/destinations/marrakech" element={<Marrakech />} />
           <Route path="/destinations/ouarzazate" element={<Ouarzazate />} />
           <Route path="/destinations/rabat" element={<Rabat />} />
+
+          {/* Activities Page Route */}
+          <Route path="/Activities" element={<ActivitiesPage />} />
           
-          {/* Route pour les activités */}
-          <Route path="/activities" element={<ActivitiesPage />} />
-          
-          {/* Route par défaut pour afficher les activités principales */}
-          <Route path="/" element={<Activities />} />
+  
         </Routes>
       </div>
     </Router>
