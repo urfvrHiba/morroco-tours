@@ -101,7 +101,7 @@ function Services() {
           <Link to="/destinations/Rabat" className="text-gray-900 font-bold italic hover:underline">
             Rabat
           </Link>{" "}
-          reflects Morocco’s diverse charm as its capital.
+          reflects Morocco's diverse charm as its capital.
         </p>
       </div>
     </div>
