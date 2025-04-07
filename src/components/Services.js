@@ -16,7 +16,7 @@ function Services() {
       description:
         "Experience professionalism and dedication with our customer-centric approach, ensuring every journey exceeds your expectations.",
     },
-    {
+    { 
       title: "Tailored Solutions",
       description:
         "We customize travel plans to suit your unique preferences and needs, ensuring a personalized and seamless experience.",
@@ -56,6 +56,7 @@ function Services() {
                 </h3>
                 <p className="text-gray-900">{pkg.description}</p>
               </div>
+              
             ))}
           </div>
         )}

@@ -1,12 +1,13 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+
 import Header from './components/Header';
-import Hero from './components/Hero';
-import InfoSection from './components/InfoSection';
-import Services from './components/Services';
+import Home from './components/Home';
 import ActivitiesPage from "./components/ActivitiesPage";
 import Activities from "./components/Activities";
-import TourPackages from './components/TourPackages';
+import Vehicles from './components/Vehicles';
+import BookingForm from './components/BookingForm';
+
 import Destinations from './destinations/Destinations';
 import Chefchaouen from './destinations/Chefchaouen';
 import Marrakech from './destinations/Marrakech';
@@ -18,25 +19,18 @@ function App() {
     <Router>
       <div>
         <Header />
-        <Hero />
-        <InfoSection />
-        <div className="my-20"></div>
-        <TourPackages />
-        <Services />
 
         <Routes>
-          {/* Routes spécifiques aux destinations */}
+          <Route path="/" element={<Home />} />
           <Route path="/destinations" element={<Destinations />} />
           <Route path="/destinations/chefchaouen" element={<Chefchaouen />} />
           <Route path="/destinations/marrakech" element={<Marrakech />} />
           <Route path="/destinations/ouarzazate" element={<Ouarzazate />} />
           <Route path="/destinations/rabat" element={<Rabat />} />
-          
-          {/* Route pour les activités */}
           <Route path="/activities" element={<ActivitiesPage />} />
-          
-          {/* Route par défaut pour afficher les activités principales */}
-          <Route path="/" element={<Activities />} />
+          <Route path="/vehicles" element={<Vehicles />} />
+          <Route path="/booking" element={<BookingForm />} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </div>
     </Router>
