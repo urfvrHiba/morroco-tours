@@ -12,6 +12,7 @@ import marrakeshImg from '../images/marakesh.jpg';
 import tangierImg from '../images/tangier.jpg';
 import rabatImg from '../images/rabat.jpg';
 
+
 function TourPackages() {
   // Define tour packages data
   const allPackages = [

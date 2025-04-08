@@ -15,7 +15,7 @@ function Header() {
   };
 
   return (
-    <header className="absolute top-0 left-0 right-0 z-10 bg-white shadow-md px-5">
+    <header className="bg-white shadow-md px-5 w-full mb-2">
       <div className="flex justify-between items-center py-2 text-gray-700 text-sm md:text-base px-10 md:px-20 italic">
         <div className="flex space-x-4 md:space-x-6">
           <span className="text-blue-600">📞 +212 612-345678</span>
@@ -51,9 +51,10 @@ function Header() {
           <ul className="flex space-x-4 text-gray-700 md:space-x-14 text-sm md:text-base font-medium uppercase">
             <li><Link to="/" className="hover:text-blue-600">Home</Link></li>
             <li><Link to="/vehicles" className="hover:text-blue-600">Vehicles</Link></li>
-            <li><a href="#about" className="hover:text-blue-600">About Us</a></li>
-            <li><a href="#contact" className="hover:text-blue-600">Contact Us</a></li>
+            
+            <li><Link to="/contact" className="hover:text-blue-600">Contact Us</Link></li>
             <li><a href="#tours" className="hover:text-blue-600">Tours</a></li>
+            <li><Link to="/aboutUs" className="hover:text-blue-600">About Us</Link></li>
           </ul>
         </nav>
       </div>

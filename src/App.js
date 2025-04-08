@@ -4,9 +4,10 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import Header from './components/Header';
 import Home from './components/Home';
 import ActivitiesPage from "./components/ActivitiesPage";
-import Activities from "./components/Activities";
 import Vehicles from './components/Vehicles';
 import BookingForm from './components/BookingForm';
+import ContactPage from './components/ContactPage';
+import AboutUs from './components/AboutUs';
 
 import Destinations from './destinations/Destinations';
 import Chefchaouen from './destinations/Chefchaouen';
@@ -22,14 +23,21 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/aboutUs" element={<AboutUs />} />
+          <Route path="/vehicles" element={<Vehicles />} />
+          <Route path="/booking" element={<BookingForm />} />
+          <Route path="/contact" element={<ContactPage />} />
+
+          <Route path="/activities" element={<ActivitiesPage />} />
+          
+          {/* Destinations */}
           <Route path="/destinations" element={<Destinations />} />
           <Route path="/destinations/chefchaouen" element={<Chefchaouen />} />
           <Route path="/destinations/marrakech" element={<Marrakech />} />
           <Route path="/destinations/ouarzazate" element={<Ouarzazate />} />
           <Route path="/destinations/rabat" element={<Rabat />} />
-          <Route path="/activities" element={<ActivitiesPage />} />
-          <Route path="/vehicles" element={<Vehicles />} />
-          <Route path="/booking" element={<BookingForm />} />
+
+          {/* Redirect any unknown path to home */}
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </div>
