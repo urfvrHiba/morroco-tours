@@ -20,6 +20,7 @@ function App() {
     <Router>
       <div>
         <Header />
+<<<<<<< HEAD
 
         <Routes>
           <Route path="/" element={<Home />} />
@@ -31,14 +32,32 @@ function App() {
           <Route path="/activities" element={<ActivitiesPage />} />
           
           {/* Destinations */}
+=======
+        <Hero />
+        <InfoSection />
+        <div className="my-20"></div>
+        <TourPackages />
+        <Services />
+        <Activities/>
+
+        <Routes>
+          {/* Destinations Routes */}
+>>>>>>> 2829c686e3743a4788b38583158d11cd59629550
           <Route path="/destinations" element={<Destinations />} />
           <Route path="/destinations/chefchaouen" element={<Chefchaouen />} />
           <Route path="/destinations/marrakech" element={<Marrakech />} />
           <Route path="/destinations/ouarzazate" element={<Ouarzazate />} />
           <Route path="/destinations/rabat" element={<Rabat />} />
 
+<<<<<<< HEAD
           {/* Redirect any unknown path to home */}
           <Route path="*" element={<Navigate to="/" />} />
+=======
+          {/* Activities Page Route */}
+          <Route path="/Activities" element={<ActivitiesPage />} />
+          
+  
+>>>>>>> 2829c686e3743a4788b38583158d11cd59629550
         </Routes>
       </div>
     </Router>
