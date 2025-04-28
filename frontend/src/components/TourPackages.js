@@ -12,6 +12,7 @@ import marrakeshImg from '../images/marakesh.jpg';
 import tangierImg from '../images/tangier.jpg';
 import rabatImg from '../images/rabat.jpg';
 
+
 function TourPackages() {
   // Define tour packages data
   const allPackages = [
@@ -25,17 +26,27 @@ function TourPackages() {
     { title: "Discover Rabat: One-Day Private Tour of History, Culture & Landmarks", imageUrl: rabatImg, duration: "1 Day", oldPrice: "$199", newPrice: "$177", discount: "" },
   ];
 
+  const reviews = [
+    { name: "SHAMEEMA ADAMS (SOUTH AFRICA)", review: "They provided excellent transfer and tours. If you are looking for a reliable, efficient company then look no further. We were a family of 8 and they arranged everything from airport pickup and did our full transfer for 13 days throughout Morocco. Fantastic! More than what was expected.", rating: 5 },
+    { name: "AMANDA NAAMI (IRELAND)", review: "We had to travel recently for a family bereavement and Rashid could not have been more accommodating. He did everything he could to help us. Highly recommended!", rating: 5 },
+    { name: "NADIA L. (UK)", review: "Great service! Very professional and on time. Will book again for sure!", rating: 5 },
+    { name: "MARTIN S. (GERMANY)", review: "The tour guide was exceptional, and the experience was very well planned. Morocco has never been more beautiful than through their eyes!", rating: 5 },
+    { name: "JULIE B. (USA)", review: "Fantastic trip! Everything was well organized, and the local guides were extremely knowledgeable and friendly. Highly recommend Morocco Tours!", rating: 5 },
+    { name: "ROBERTO M. (SPAIN)", review: "An amazing adventure! The culture and history of Morocco are truly impressive. The company took great care of us, providing excellent tours and service.", rating: 5 },
+  ];
+
+
   // Set the state for the current page of packages being displayed
   const [currentPage, setCurrentPage] = useState(0);
 
   // Handle next page navigation
   const handleNext = () => {
-    setCurrentPage((prev) => (prev + 1) % (allPackages.length - 2));
+    setCurrentPage((prev) => (prev + 1) % Math.max(1, allPackages.length - 3));
   };
 
   // Handle previous page navigation
   const handlePrev = () => {
-    setCurrentPage((prev) => (prev - 1 + (allPackages.length - 2)) % (allPackages.length - 2));
+    setCurrentPage((prev) => (prev - 1 + Math.max(1, allPackages.length - 3)) % Math.max(1, allPackages.length - 3));
   };
 
   // Displayed packages based on current page
@@ -112,8 +123,26 @@ function TourPackages() {
       {/* Google Reviews Section */}
       <h2 className="text-4xl font-bold text-gray-800 mt-16 mb-8 italic">Google Reviews</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full max-w-6xl">
-        {/* Sample Reviews */}
-        {/* Add review content here */}
+        {/* Display Reviews */}
+        {reviews.map((review, index) => (
+          <motion.div
+            key={index}
+            className="bg-white shadow-lg p-4 rounded-lg"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <p className="text-gray-600 text-sm">{review.review}</p>
+            <div className="mt-2">
+              <p className="font-semibold">{review.name}</p>
+              <div className="flex items-center mt-1">
+                {[...Array(review.rating)].map((_, idx) => (
+                  <span key={idx} className="text-yellow-400">★</span>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        ))}
       </div>
     </div>
   );

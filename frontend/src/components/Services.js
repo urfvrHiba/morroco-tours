@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { MapIcon } from "@heroicons/react/solid";
+import voitureImg from "../images/voiture.webp";
 
-import voitureImg from '../images/voiture.webp';
+
 
 function Services() {
   const allServices = [
@@ -48,19 +49,23 @@ function Services() {
           Why Choose Our Services?
         </h2>
 
-        <div className="flex gap-6 justify-center flex-wrap max-w-6xl">
-          {allServices.map((pkg, index) => (
-            <div
-              key={index}
-              className="bg-white shadow-lg rounded-xl p-6 w-80"
-            >
-              <h3 className="text-2xl font-bold text-blue-600 mb-2">
-                {pkg.title}
-              </h3>
-              <p className="text-gray-800">{pkg.description}</p>
-            </div>
-          ))}
-        </div>
+        {allServices.length === 0 ? (
+          <p className="text-red-500 text-xl">No services available</p>
+        ) : (
+          <div className="flex gap-6 justify-center flex-wrap max-w-6xl">
+            {allServices.map((pkg, index) => (
+              <div
+                key={index}
+                className="bg-white shadow-lg rounded-xl p-6 w-80"
+              >
+                <h3 className="text-2xl font-bold text-blue-600 mb-2">
+                  {pkg.title}
+                </h3>
+                <p className="text-gray-800">{pkg.description}</p>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* Popular Destinations */}

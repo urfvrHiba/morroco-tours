@@ -3,14 +3,20 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 function InfoSection() {
+
   // Les données directement dans le fichier
+
   const infoData = [
+
     {
       title: "Our Mission",
       description: (
         <>
+        
+
           <p>Our mission is to deliver a stress-free, affordable, and optimal travel and transportation experience for everyone, complemented by exceptional customer service.</p>
           <p>With years of experience working with tourists and travelers from around the globe, we’ve developed an extensive portfolio of tailored offers and a wealth of knowledge to meet the unique needs of groups from all continents and diverse cultural and religious backgrounds.</p>
+
         </>
       )
     },

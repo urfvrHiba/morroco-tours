@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import ouarzazateImg from '../images/ouarzazate.jpg';  // Example image import
+import ouarzazateImg from '../images/ouarzazate.jpg';
 import testImg from '../images/test.jpg';
 import rabatImg from '../images/rabat.jpg';
 import tangerImg from '../images/tanger.jpg';
 
 function Hero() {
-  const [bgImage, setBgImage] = useState(testImg); // Default image as test.jpg
+  const [bgImage, setBgImage] = useState(testImg);
   const images = [ouarzazateImg, testImg, rabatImg, tangerImg];
   const cities = ['Ouarzazate', 'Casablanca', 'Rabat', 'Tanger'];
   const descriptions = [
@@ -14,19 +14,17 @@ function Hero() {
     'Visit Rabat, the beautiful capital of Morocco with a rich history.',
     'Tanger, where Europe meets Africa, offering a blend of cultures and landscapes.',
   ];
-
   const buttonTexts = [
     'Book your Sahara Adventure!',
     'Start your Casablanca Journey!',
     'Explore Rabat Now!',
     'Visit the Magic of Tanger!',
   ];
-
   const buttonColors = [
-    'bg-[#6F4F37]',  // Ouarzazate Marron
-    'bg-blue-500',    // Casablanca Blue
-    'bg-sky-300',     // Rabat Sky Blue
-    'bg-blue-700',    // Tanger Dark Blue
+    'bg-[#6F4F37]',
+    'bg-blue-500',
+    'bg-sky-300',
+    'bg-blue-700',
   ];
 
   const changeImage = () => {
@@ -38,15 +36,15 @@ function Hero() {
   return (
     <div
       id="home"
-      className={`bg-cover bg-center h-screen flex items-center justify-center text-center transition-all duration-1000 ease-in-out mt-28 pt-6 italic`}
-      style={{ backgroundImage: `url(${bgImage})` }}  // Set dynamic background image
+      className="bg-cover bg-center h-screen flex items-center justify-center text-center transition-all duration-1000 ease-in-out pt-6 italic"
+      style={{ backgroundImage: `url(${bgImage})` }}
     >
       <div className="absolute top-2 left-2 bottom-0 p-12 flex flex-col justify-center items-center text-white w-1/3">
         <h1 className="text-6xl font-bold mb-6">{cities[images.indexOf(bgImage)]}</h1>
         <p className="text-xl mb-8">{descriptions[images.indexOf(bgImage)]}</p>
         <div className="mt-6">
           <button
-            className={`${buttonColors[images.indexOf(bgImage)]} py-4 px-10 rounded-lg hover:bg-opacity-80 transition`}
+            className={`${buttonColors[images.indexOf(bgImage)]} py-4 px-10 rounded-lg`}
             onClick={changeImage}
           >
             {buttonTexts[images.indexOf(bgImage)]}

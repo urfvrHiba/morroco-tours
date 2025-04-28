@@ -1,12 +1,14 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+
 import Header from './components/Header';
-import Hero from './components/Hero';
-import InfoSection from './components/InfoSection';
-import Services from './components/Services';
+import Home from './components/Home';
 import ActivitiesPage from "./components/ActivitiesPage";
-import Activities from "./components/Activities";
-import TourPackages from './components/TourPackages';
+import Vehicles from './components/Vehicles';
+import BookingForm from './components/BookingForm';
+import ContactPage from './components/ContactPage';
+import AboutUs from './components/AboutUs';
+
 import Destinations from './destinations/Destinations';
 import Chefchaouen from './destinations/Chefchaouen';
 import Marrakech from './destinations/Marrakech';
@@ -18,25 +20,24 @@ function App() {
     <Router>
       <div>
         <Header />
-        <Hero />
-        <InfoSection />
-        <div className="my-20"></div>
-        <TourPackages />
-        <Services />
-        <Activities/>
 
         <Routes>
-          {/* Destinations Routes */}
+          <Route path="/" element={<Home />} />
+          <Route path="/aboutUs" element={<AboutUs />} />
+          <Route path="/vehicles" element={<Vehicles />} />
+          <Route path="/booking" element={<BookingForm />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/activities" element={<ActivitiesPage />} />
+
+          {/* Destinations */}
           <Route path="/destinations" element={<Destinations />} />
           <Route path="/destinations/chefchaouen" element={<Chefchaouen />} />
           <Route path="/destinations/marrakech" element={<Marrakech />} />
           <Route path="/destinations/ouarzazate" element={<Ouarzazate />} />
           <Route path="/destinations/rabat" element={<Rabat />} />
 
-          {/* Activities Page Route */}
-          <Route path="/Activities" element={<ActivitiesPage />} />
-          
-  
+          {/* Redirect unknown routes to home */}
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </div>
     </Router>
